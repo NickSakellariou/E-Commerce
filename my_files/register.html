@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TechItEasy</title>
+		<meta charset="UTF-8">
+		<meta name="viewpoint" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="register.css">
+	</head>
+	<body>
+		<div class="header">
+			<a href="home_page.php">
+				<h1>
+					<img src="icons/logo.jpeg">
+						TechItEasy
+				</h1>
+			</a>
+			<h5>All about electronics</h5>
+			<br>
+			<br>
+			<h3>Πάντα δίπλα στον πελάτη με ποιοτικές λύσεις τεχνολογίας!!!</h3>	
+		</div>
+		<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+		  <ul class="navbar-nav">
+			<li class="nav-item">
+			  <a class="nav-link" href="home_page.php">ΑΡΧΙΚΗ</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="categories.php">ΚΑΤΗΓΟΡΙΕΣ</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="stores.php">ΕΤΑΙΡΕΙΑ</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="faq.php">F.A.Q.</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="cart.php">ΚΑΛΑΘΙ</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="past_orders.php">ΙΣΤΟΡΙΚΟ</a>
+			</li>
+		  </ul>
+		   <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<form class="search" action="search.php" method="post">
+					  <input type="text" placeholder="Search.." name="search">
+					  <button type="submit" style="font-size:1px"><i class="material-icons">search</i></button>
+					</form>
+				</li>
+			</ul>
+		   </div>
+		</nav>
+		<br>
+		<div class="row1">
+			<h1>Δημιουργία χρήστη</h1>
+		</div>
+		<div class="mainrow">
+			<h2>Εισάγετε τα προσωπικά σας στοιχεία</h2>
+			<form name="myform" method="POST" action="register2.php">
+				<hr>
+				<div class="form-group">
+				  <label for="name">Όνομα:</label>
+				  <input type="text" class="form-control" pattern="[a-zA-Z]{1,}" ng-model="name" title="Must contain only letters" id="name" name="name" required>
+				  <span ng-show="myform.name.$error.required">Required</span><br>
+				</div>
+				<div class="form-group">
+				  <label for="surname">Επίθετο:</label>
+				  <input type="text" class="form-control" pattern="[a-zA-Z]{1,}" ng-model="surname" title="Must contain only letters" id="surname" name="surname" required>
+				  <span ng-show="myform.surname.$error.required">Required</span><br>
+				</div>
+				<div class="form-group">
+				  <label for="email">E-mail:</label>
+				  <input type="email" class="form-control" pattern="[[a-zA-Z]0-9._%+-]+@[[a-zA-Z]0-9.-]+\.[[a-zA-Z]]{2,}$" title="characters followed by an @ sign, followed by more characters, and then a '.',followed by at least 2 letters from a to z" ng-model="email" id="email" name="email" required>
+				  <span ng-show="myform.email.$error.required">Required</span><br>
+				</div>
+				<div class="form-group">
+				  <label for="phone">Τηλέφωνο:</label>
+				  <input type="text" class="form-control" pattern="[0-9]{10}" ng-model="phone" title="Must contain 10 numbers"  id="phone" name="phone" ng-minlength="10" ng-maxlength="10" required>
+				   <span ng-show="myform.phone.$error.required">Required</span><br>
+				</div>
+				<div class="form-group">
+				  <label for="username">Username:</label>
+				  <input type="text" class="form-control" pattern=".{5,}" ng-model="username" title="Must contain 5 or more characters" id="username" name="username" required>
+				  <span ng-show="myform.username.$error.required">Required</span><br>
+				</div>
+				<div class="form-group">
+				  <label for="password">Password:</label>
+				  <input type="password" class="form-control" pattern=".{8,}" ng-model="password" title="Must contain 8 or more characters" id="password" name="password" required>
+				  <span ng-show="myform.password.$error.required">Required</span><br>
+				</div>
+				<button type="submit">Υποβολή</button>
+			</form>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="footer">
+			&copy;
+			<a href="http://www.ds.unipi.gr/" target="_blank">2021 DS_UNIPI
+			</a>.
+			All rights reserved.
+		</div>
+	</body>
+</html>
